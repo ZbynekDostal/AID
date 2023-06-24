@@ -51,7 +51,7 @@ rad_to_pg = True # False or True
 ```
 10. Select type of AID calculation between incremental and "to first" method.
 ```
-DPD_type = "to_first" # "increment" or "to_first"
+AID_type = "to_first" # "increment" or "to_first"
 ```
 11. Select procedures, which will be run:
     - 'AID' calculates data, creates images, data table and all data saves;
@@ -69,7 +69,7 @@ After running all the procedures this directory structure is obtained:
     - blue color is image_2.
     
     The white line connects points of centre of gravity of both images.
-- **DPD**    
+- **AID**    
     This directory contains images with AID. 
     
     For two color AID:     
@@ -82,23 +82,23 @@ After running all the procedures this directory structure is obtained:
     - turquoise color is newly occupied area,
     - purple color is decrement area.
  
-- **DPD_raw** 
+- **AID_raw** 
     
     This directory contains numpy files with AID. 
 
-- **DPD_COG**
+- **AID_COG**
 
    This directory contains images with AID. The same as AID. The white line connects points of centre of gravity 
    of increment and decrement.
 
-- **zero_line_DPD**    
+- **zero_line_AID**    
     This directory contains images with AID. 
     
     - Red color is decrement,
     - green color is increment,
     - white color represents zero-line.
 
-- **zero_line_DPD_raw**    
+- **zero_line_AID_raw**    
     This directory contains numpy files with zero line AID.
 
 - **area_masks** 
