@@ -8,7 +8,6 @@ import os
 import AID_core
 import plot
 
-
 path = os.path.join(os.path.dirname(__file__), "B02-02r")
 trashold = 0
 quantitative = False #only for images! not for raw data.

@@ -722,8 +722,10 @@ class Core(object):
 
            
 
-    """
+
     def generate_sorted_images(self):
+        """ Sort files from directory with tiff files.
+        """
         loader = Loader(self.path)
         loader.read_directory()
         loader.map_directory()
@@ -738,7 +740,7 @@ class Core(object):
             self.sorted_images.append(Image.open(os.path.join(self.path,self.list_dir[index] )))
             self.sorted_names_of_images.append(self.list_dir[index]) 
 
-
+    """
     def get_images_and_contours(self):
         self.generate_sorted_images()
         image_processing = Image_processing(0)
