@@ -178,7 +178,7 @@ class Grafs(object):
         return np.asarray(angle), np.asarray(distance)
     
     def plot_mass(self, image_1_mass, image_2_mass, increment_mass, decrement_mass, list_dir_out):
-        """ Creates bar graphs of dry mass of the cell, of increment of the cell and of decrement of the cell
+        """ Creates bar graphs of  mass of the cell, of increment of the cell and of decrement of the cell
         """
         fig, axs = plt.subplots(2, 2)
 
