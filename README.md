@@ -27,15 +27,14 @@ step = 1
 ```
 time_step = 30 
 ```
-6. Select type of AID. If 'two' - AID images consist from two colors (red and green for decrement and increment). 
-If 'four' - AID images are extended with blue color. After mixing of colors: Newly occupied areas are marked in turquoise, 
-areas with mass gain are green, decrement areas in purple, and areas with mass loss are red. 
-Similarly to this [paper](https://doi.org/10.1117/1.jbo.20.11.111214).
+6. Select type of AID. If 'two' - AID images consist from two colors (in shades of red and green coded areas for decrement and increment of the cell mass). 
+If 'four' - AID images are extended with shades of blue color. After mixing of colors: Newly occupied areas are marked in shades of turquoise, just abandoned areas are marked in shades of purple.
+In shades of red and green coded areas for decrement and increment of the cell mass. Similarly to this [paper](https://doi.org/10.1117/1.jbo.20.11.111214).
 ```
 n_of_collors = 'two' # 'two' or 'four' 
 ```
 7. Select magnification of used objective lens for define of pixel area size. The pixel areas and magnifications are defined in 
-the head of AID_core.py. The calculation of dry cell mass from phase values is defined in AID_core.py -> class Core -> rad_to_pg 
+the head of AID_core.py. The calculation of cell mass from phase values is defined in AID_core.py -> class Core -> rad_to_pg 
 method and is described in this [paper](https://doi.org/10.1242/jcs.s3-95.31.271). Modify values of this method by your type of quantitative 
 phase microscope.
 ```
@@ -45,7 +44,7 @@ mag = '40x' # '4x' or '10x' or '20x' or '40x' or '60x'
 ```
 wavelength = 650
 ```
-9. Choose whether the phase values should be converted to cell dry mass.
+9. Choose whether the phase values should be converted to cell  mass.
 ```
 rad_to_pg = True # False or True
 ```
@@ -65,22 +64,22 @@ what_to_run = 'all' # 'AID' or 'plot' or 'all'
 After running all the procedures this directory structure is obtained:
 - **images_COG**    
     This directory contains the overlay source images:    
-    - red color is image_1
-    - blue color is image_2.
+    - red color is image with index _n_
+    - blue color is image with index _n+1_
     
     The white line connects points of centre of gravity of both images.
 - **AID**    
     This directory contains images with AID. 
     
     For two color AID:     
-    - Red color is decrement,
-    - green color is increment,
+    - shades of red color is decrement,
+    - shades of green color is increment,
 
     or for four color AID:
-    - red color is decrement,
-    - green color is increment,
-    - turquoise color is newly occupied area,
-    - purple color is decrement area.
+    - shades of red color is decrement,
+    - shades of green color is increment,
+    - shades of turquoise color is newly occupied area,
+    - shades of purple just abandoned area.
  
 - **AID_raw** 
     
@@ -92,10 +91,10 @@ After running all the procedures this directory structure is obtained:
    of increment and decrement.
 
 - **zero_line_AID**    
-    This directory contains images with AID. 
+    This directory contains images with AID: 
     
-    - Red color is decrement,
-    - green color is increment,
+    - shades of red color is decrement,
+    - shades of green color is increment,
     - white color represents zero-line.
 
 - **zero_line_AID_raw**    
@@ -103,8 +102,8 @@ After running all the procedures this directory structure is obtained:
 
 - **area_masks** 
 
-    This directory contains images with areas. 
-    - Blue color is anchor area,
+    This directory contains images with areas:
+    - blue color is anchor area,
     - red color is decrement area,
     - green color is increment area.
 
@@ -128,15 +127,15 @@ After running all the procedures this directory structure is obtained:
 - **data**
 
     This directory contains subdirectories with all calculated data:
-    - ***image_1*** & ***image_2*** - source image files from witch  is AID calculated; numpy files; and JSON structures with dry 
+    - ***image_1*** & ***image_2*** - source image files from witch  is AID calculated; numpy files; and JSON structures with  
       cell mass and centres of gravities,
-    - ***increment*** - image file; numpy file; and JSON structure with dry cell mass and centres of gravities, 
-    - ***increment_area*** - image file; numpy file; and JSON structure with dry cell mass and centres of gravities, 
-    - ***decrement*** - image file; numpy file; and JSON structure with dry cell mass and centres of gravities, 
-    - ***decrement_area*** - image file; numpy file; and JSON structure with dry cell mass and centres of gravities, 
-    - ***anchor_area*** - image file; numpy file; and JSON structure with dry cell mass and centres of gravities, 
-    - ***anchor_increment_area*** - image file; numpy file; and JSON structure with dry cell mass and centres of gravities, 
-    - ***anchor_decrement_area*** - image file; numpy file; and JSON structure with dry cell mass and centres of gravities, 
+    - ***increment*** - image file; numpy file; and JSON structure with  cell mass and centres of gravities, 
+    - ***increment_area*** - image file; numpy file; and JSON structure with  cell mass and centres of gravities, 
+    - ***decrement*** - image file; numpy file; and JSON structure with  cell mass and centres of gravities, 
+    - ***decrement_area*** - image file; numpy file; and JSON structure with  cell mass and centres of gravities, 
+    - ***anchor_area*** - image file; numpy file; and JSON structure with  cell mass and centres of gravities, 
+    - ***anchor_increment_area*** - image file; numpy file; and JSON structure with  cell mass and centres of gravities, 
+    - ***anchor_decrement_area*** - image file; numpy file; and JSON structure with  cell mass and centres of gravities, 
     - ***zeroline*** - JSON structure with length of zero-line.
     
     
@@ -147,11 +146,11 @@ After running all the procedures this directory structure is obtained:
 **mass**
 
 - "image x mass": 
-  - *x* - image;  *y* - dry mass 
+  - *x* - image;  *y* - cell mass 
 - "increment x mass": 
-  - *x* - AID;  *y* - sum of dry mass increment 
+  - *x* - AID;  *y* - sum of  mass increment 
 - "decrement x mass": 
-  - *x* - AID;  *y* - sum of dry mass decrement 
+  - *x* - AID;  *y* - sum of  mass decrement 
         
 **increment-decrement_weighted**    
 
