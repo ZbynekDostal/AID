@@ -3,7 +3,7 @@
 
 ## Introduction
 - This code is used for the analysis of quantitative phase images (QPI) by the Analytical Image Differencing (AID)
-  method, which is described in a [paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4344841). It is important to analyze cell by cell. Therefore, it is necessary 
+  method, which is described in a [paper]([https://doi.org/10.1016/j.cmpb.2025.108829). It is important to analyze cell by cell. Therefore, it is necessary 
   to have a series of images containing only one cell.
 
 ## run.py
